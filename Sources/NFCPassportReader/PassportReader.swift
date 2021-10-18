@@ -52,6 +52,10 @@ public class PassportReader : NSObject {
         self.masterListURL = masterListURL
     }
     
+    public func stopReading() {
+        self.readerSession?.invalidate()
+    }
+    
     // This function allows you to override the amount of data the TagReader tries to read from the NFC
     // chip. NOTE - this really shouldn't be used for production but is useful for testing as different
     // passports support different data amounts.
